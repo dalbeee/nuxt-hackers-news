@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import InfiniteLoading from "vue-infinite-loading";
 import PostComponent from "./PostComponent.vue";
 
@@ -27,7 +27,7 @@ export default {
   },
   components: { InfiniteLoading, PostComponent },
   methods: {
-    async infiniteHandler($state: any) {
+    async infiniteHandler($state) {
       console.log("check");
       const { data } = await this.$store.dispatch("api");
       data.length ? $state.loaded() : $state.complete();

@@ -1,6 +1,8 @@
 import { ActionTree, GetterTree } from "vuex/types/index";
 import { getPosts } from "~/util/axios";
 
+import { getAccessorType } from "typed-vuex";
+
 export type RootState = ReturnType<typeof state>;
 
 export interface State {
@@ -50,3 +52,13 @@ interface IPost {
   url: any;
   _tags: string[];
 }
+
+export const accessorType = getAccessorType({
+  state,
+  getters,
+  mutations,
+  actions,
+  modules: {
+    // The key (submodule) needs to match the Nuxt namespace (e.g. ~/store/submodule.ts)
+  }
+});
