@@ -16,7 +16,7 @@ export const state = (): State => ({
 });
 
 export const getters: GetterTree<RootState, RootState> = {
-  getPosts: (state: any) => state.posts
+  // getPosts: (state: any) => state.posts
 };
 
 export const mutations = {
