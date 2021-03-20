@@ -1,7 +1,7 @@
 import { ActionTree, GetterTree } from "vuex/types/index";
 import { getPosts } from "~/util/axios";
 
-import { getAccessorType } from "typed-vuex";
+// import { getAccessorType } from "typed-vuex";
 
 export type RootState = ReturnType<typeof state>;
 
@@ -15,9 +15,7 @@ export const state = (): State => ({
   pageNumber: 1
 });
 
-export const getters: GetterTree<RootState, RootState> = {
-  // getPosts: (state: any) => state.posts
-};
+export const getters: GetterTree<RootState, RootState> = {};
 
 export const mutations = {
   getPosts: (state: State, payload: string) => {
@@ -53,12 +51,12 @@ interface IPost {
   _tags: string[];
 }
 
-export const accessorType = getAccessorType({
-  state,
-  getters,
-  mutations,
-  actions,
-  modules: {
-    // The key (submodule) needs to match the Nuxt namespace (e.g. ~/store/submodule.ts)
-  }
-});
+// export const accessorType = getAccessorType({
+//   state,
+//   getters,
+//   mutations,
+//   actions,
+//   modules: {
+//     // The key (submodule) needs to match the Nuxt namespace (e.g. ~/store/submodule.ts)
+//   }
+// });
